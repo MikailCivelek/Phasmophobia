@@ -245,7 +245,7 @@
     <Resource Include="x_rA1_icon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\halloween.gif" />
+    <Resource Include="Resources\world.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.6.5.5\build\Fody.targets" Condition="Exists('..\packages\Fody.6.5.5\build\Fody.targets')" />

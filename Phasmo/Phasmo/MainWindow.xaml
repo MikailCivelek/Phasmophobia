@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Phasmo"
         xmlns:gif ="https://github.com/XamlAnimatedGif/XamlAnimatedGif"
         mc:Ignorable="d"
-        Title="Phasmophobia Checklist" TextBlock.TextAlignment="Center" Height="750" Width="1195" ResizeMode="NoResize"
+        Title="Phasmophobia Checklist" TextBlock.TextAlignment="Center" Height="800" Width="1600" ResizeMode="NoResize"
         Background="Black" Foreground="White">
     <Window.Resources>
         <Style TargetType="ListBoxItem">
@@ -20,7 +20,7 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsSelected" Value="true">
-                                <Setter TargetName="_Border" Property="Background" Value="#fcb249"/>
+                                <Setter TargetName="_Border" Property="Background" Value="#8ceaff"/>
                                 <Setter Property="Foreground" Value="Black"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
@@ -31,7 +31,7 @@
         <Style TargetType="Button">
             <Setter Property="OverridesDefaultStyle" Value="True"/>
             <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="Foreground" Value="Wheat"/>
+            <Setter Property="Foreground" Value= "#8ceaff"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="Width" Value="100"/>
             <Setter Property="Height" Value="100"/>
@@ -41,7 +41,7 @@
                         <Border Name="border" 
         				BorderThickness="3"
         				Padding="4,2" 
-        				BorderBrush="Wheat" 
+        				BorderBrush="#8ceaff" 
         				CornerRadius="3" 
         				Background="{TemplateBinding Background}">
                             <Grid >
@@ -51,13 +51,13 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="border" Property="BorderBrush" Value="Wheat" />
+                                <Setter TargetName="border" Property="BorderBrush" Value="#8ceaff" />
                                 <Setter Property="Foreground" Value="Black" />
-                                <Setter Property="Background" Value="Wheat"/>
+                                <Setter Property="Background" Value="#8ceaff"/>
                             </Trigger>
                             <Trigger Property="IsPressed" Value="True">
-                                <Setter Property="Background" Value="#d7b97f"/>
-                                <Setter TargetName="border" Property="BorderBrush" Value="#d7b97f" />
+                                <Setter Property="Background" Value="#8ceaff"/>
+                                <Setter TargetName="border" Property="BorderBrush" Value="#8ceaff" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -66,113 +66,133 @@
         </Style>
     </Window.Resources>
     <Grid Background="Black">
-        <Image gif:AnimationBehavior.SourceUri="Resources/halloween.gif" HorizontalAlignment="Left" Height="750"  VerticalAlignment="Top" Width="1195" RenderTransformOrigin="0.26,-1.27" Stretch="UniformToFill" Opacity="0.5"/>
+        <Image gif:AnimationBehavior.SourceUri="Resources/world.gif" HorizontalAlignment="Left" Height="750"  VerticalAlignment="Top" Width="1195" RenderTransformOrigin="0.26,-1.27" Stretch="UniformToFill" Opacity="0.5"/>
 
 
-        <ListBox  x:Name="FirstEvidence" Background="Transparent" Foreground="Wheat" BorderThickness="0"
-                  HorizontalAlignment="Left" Height="150" VerticalAlignment="Top" Width="150" Margin="10,65,0,0" SelectionChanged="FirstEvidence_SelectionChanged"/>
-        <ListBox x:Name="SecondEvidence" Background="Transparent" Foreground="Wheat" BorderThickness="0"
+        <ListBox  x:Name="FirstEvidence" Background="Transparent" Foreground="#8ceaff" BorderThickness="0"
+                  HorizontalAlignment="Left" Height="150" VerticalAlignment="Top" Width="150" Margin="10,65,0,0" SelectionChanged="FirstEvidence_SelectionChanged" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <ListBox x:Name="SecondEvidence" Background="Transparent" Foreground="#8ceaff" BorderThickness="0"
                  HorizontalAlignment="Left" Height="150" VerticalAlignment="Top" Width="150" Margin="165,65,0,0" SelectionChanged="SecondEvidence_SelectionChanged"/>
-        <ListBox x:Name="ThirdEvidence" Background="Transparent" Foreground="Wheat" BorderThickness="0"
+        <ListBox x:Name="ThirdEvidence" Background="Transparent" Foreground="#8ceaff" BorderThickness="0"
                  HorizontalAlignment="Left" Height="150" VerticalAlignment="Top" Width="150" Margin="320,65,0,0" SelectionChanged="ThirdEvidence_SelectionChanged"/>
 
-        <Button Content="Reset" Click="Button_Click" Margin="590,80,482,495"/>
+        <Button Content="Reset" Click="Button_Click" Margin="590,80,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
-        <Label Content="Name" Foreground="White" Height="30" HorizontalContentAlignment="Center" FontWeight="Bold" Margin="12,237,1086,420" />
-        <Label Content="Evidence Needed" Foreground="White" Height="30" Margin="108,237,831,420" HorizontalContentAlignment="Center" FontWeight="Bold"/>
-        <Label Content="Weaknesses" Foreground="White" Height="30" Margin="363,237,426,420" HorizontalContentAlignment="Center" FontWeight="Bold"/>
-        <Label Content="Strengths" Foreground="White" Height="30"  HorizontalContentAlignment="Center" FontWeight="Bold" Margin="768,237,21,420"/>
-        <Label Content="First Evidence" Foreground="White" Height="30" Margin="12,30,1029,631" HorizontalContentAlignment="Center" FontWeight="Bold"/>
-        <Label Content="Second Evidence" Foreground="White" Height="30" Margin="165,30,874,631" HorizontalContentAlignment="Center" FontWeight="Bold"/>
-        <Label Content="Third Evidence" Foreground="White" Height="30" HorizontalContentAlignment="Center"  Margin="320,30,719,631" FontWeight="Bold"/>
-        <Label Content="Evidence Not Needed" Foreground="White" Height="30" Margin="914,30,78,631" HorizontalContentAlignment="Center" FontWeight="Bold"/>
-        <Label Content="© Created by Mike and Anna" Foreground="White" Height="30" HorizontalContentAlignment="Center" FontWeight="Bold" RenderTransformOrigin="1.34,-2.267" Margin="914,158,78,503"/>
+        <Label Content="Name" Foreground="White" Height="30" HorizontalContentAlignment="Center" FontWeight="Bold" Margin="12,237,0,0" Width="95" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <Label Content="Evidence Needed" Foreground="White" Height="30" Margin="108,237,0,0" HorizontalContentAlignment="Center" FontWeight="Bold" Width="260" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label Content="Weaknesses" Foreground="White" Height="30" Margin="369,237,0,0" HorizontalContentAlignment="Center" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Width="400"/>
+        <Label Content="Strengths" Foreground="White" Height="30"  HorizontalContentAlignment="Center" FontWeight="Bold" Margin="770,237,0,0" Width="400" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Label Content="Nightmare Helper" Foreground="White" Height="30"  HorizontalContentAlignment="Center" FontWeight="Bold" Margin="1171,237,0,0" Width="400" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Label Content="First Evidence" Foreground="White" Height="30" Width="150" HorizontalContentAlignment="Center" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="12,30,0,0"/>
+        <Label Content="Second Evidence" Foreground="White" Height="30" Margin="165,30,0,0" HorizontalContentAlignment="Center" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Width="150"/>
+        <Label Content="Third Evidence" Foreground="White" Height="30" HorizontalContentAlignment="Center"  Margin="320,30,0,0" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Width="150"/>
+        <Label Content="Evidence Not Needed" Foreground="White" Height="30" Margin="914,30,0,0" HorizontalContentAlignment="Center" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Width="210"/>
+        <Label Content="© Created by Mike and Anna" Foreground="White" Height="30" HorizontalContentAlignment="Center" FontWeight="Bold" RenderTransformOrigin="1.34,-2.267" Margin="914,175,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="210"/>
         
-        <ItemsControl x:Name="lstName" Margin="12,272,1089,16" AlternationCount="2">
+        <ItemsControl x:Name="lstName" Margin="12,272,0,0" AlternationCount="2" Width="95" Height="500" HorizontalAlignment="Left" VerticalAlignment="Top">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock x:Name="NameOutput" Foreground="Wheat" Text="{Binding Name}" Margin="0.5,0.5,0.5,0.5" Padding="5,2,5,2"/>
+                    <TextBlock x:Name="NameOutput" Foreground="Black" Text="{Binding Name}" Margin="0.5,0.5,0.5,0.5" Padding="5,2,5,2"/>
                     <DataTemplate.Triggers>
                         <Trigger Property="ItemsControl.AlternationIndex" Value="0">
-                            <Setter TargetName="NameOutput" Property="Background" Value="#fcb249"/>
+                            <Setter TargetName="NameOutput" Property="Background" Value="#968cff"/>
                             <Setter TargetName="NameOutput" Property="Foreground" Value="Black"/>
                         </Trigger>
                         <Trigger Property="ItemsControl.AlternationIndex" Value="1">
-                            <Setter TargetName="NameOutput" Property="Background" Value="Wheat"/>
+                            <Setter TargetName="NameOutput" Property="Background" Value="#8ceaff"/>
                             <Setter TargetName="NameOutput" Property="Foreground" Value="Black"/>
                         </Trigger>
                     </DataTemplate.Triggers>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
-        <ItemsControl x:Name="lstEvidenceNeeded" AlternationCount="2" Margin="105,272,831,16">
+        <ItemsControl x:Name="lstEvidenceNeeded" AlternationCount="2" Margin="108,272,0,0" Width="260" Height="500" HorizontalAlignment="Left" VerticalAlignment="Top">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock x:Name="EvidenceNeededOutput" Foreground="Wheat" TextAlignment="Left" Text="{Binding}" Margin="0.5,0.5,0.5,0.5" Padding="5,2,5,2"/>
+                    <TextBlock x:Name="EvidenceNeededOutput" Foreground="Black" TextAlignment="Left" Text="{Binding}" Margin="0.5,0.5,0.5,0.5" Padding="5,2,5,2"/>
                     <DataTemplate.Triggers>
                         <Trigger Property="ItemsControl.AlternationIndex" Value="0">
-                            <Setter TargetName="EvidenceNeededOutput" Property="Background" Value="#fcb249"/>
+                            <Setter TargetName="EvidenceNeededOutput" Property="Background" Value="#968cff"/>
                             <Setter TargetName="EvidenceNeededOutput" Property="Foreground" Value="Black"/>
                         </Trigger>
                         <Trigger Property="ItemsControl.AlternationIndex" Value="1">
-                            <Setter TargetName="EvidenceNeededOutput" Property="Background" Value="Wheat"/>
+                            <Setter TargetName="EvidenceNeededOutput" Property="Background" Value="#8ceaff"/>
                             <Setter TargetName="EvidenceNeededOutput" Property="Foreground" Value="Black"/>
                         </Trigger>
                     </DataTemplate.Triggers>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
-        <ItemsControl x:Name="lstWeaknesses" Width="400" AlternationCount="2" Margin="363,272,426,16">
+        <ItemsControl x:Name="lstWeaknesses" Width="400" AlternationCount="2" Margin="369,272,0,0" Height="500" HorizontalAlignment="Left" VerticalAlignment="Top">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock x:Name="WeaknessesOutput" Foreground="Wheat" TextAlignment="Left" Text="{Binding Weaknesses}" Margin="0.5,0.5,0.5,0.5" Padding="5,2,5,2"/>
+                    <TextBlock x:Name="WeaknessesOutput" Foreground="Black" TextAlignment="Left" Text="{Binding Weaknesses}" Margin="0.5,0.5,0.5,0.5" Padding="5,2,5,2"/>
                     <DataTemplate.Triggers>
                         <Trigger Property="ItemsControl.AlternationIndex" Value="0">
-                            <Setter TargetName="WeaknessesOutput" Property="Background" Value="#fcb249"/>
+                            <Setter TargetName="WeaknessesOutput" Property="Background" Value="#968cff"/>
                             <Setter TargetName="WeaknessesOutput" Property="Foreground" Value="Black"/>
                         </Trigger>
                         <Trigger Property="ItemsControl.AlternationIndex" Value="1">
-                            <Setter TargetName="WeaknessesOutput" Property="Background" Value="Wheat"/>
+                            <Setter TargetName="WeaknessesOutput" Property="Background" Value="#8ceaff"/>
                             <Setter TargetName="WeaknessesOutput" Property="Foreground" Value="Black"/>
                         </Trigger>
                     </DataTemplate.Triggers>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
-        <ItemsControl x:Name="lstStrengths" Width="400" AlternationCount="2" Margin="768,272,21,16">
+        <ItemsControl x:Name="lstStrengths" Width="400" AlternationCount="2" Margin="770,272,0,0" Height="500" HorizontalAlignment="Left" VerticalAlignment="Top">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock x:Name="StrengthsOutput" Foreground="Wheat" TextAlignment="Left" Text="{Binding Strengths}" Margin="0.5,0.5,0.5,0.5" Padding="5,2,5,2"/>
+                    <TextBlock x:Name="StrengthsOutput" Foreground="Black" TextAlignment="Left" Text="{Binding Strengths}" Margin="0.5,0.5,0.5,0.5" Padding="5,2,5,2"/>
                     <DataTemplate.Triggers>
                         <Trigger Property="ItemsControl.AlternationIndex" Value="0">
-                            <Setter TargetName="StrengthsOutput" Property="Background" Value="#fcb249"/>
+                            <Setter TargetName="StrengthsOutput" Property="Background" Value="#968cff"/>
                             <Setter TargetName="StrengthsOutput" Property="Foreground" Value="Black"/>
                         </Trigger>
                         <Trigger Property="ItemsControl.AlternationIndex" Value="1">
-                            <Setter TargetName="StrengthsOutput" Property="Background" Value="Wheat"/>
+                            <Setter TargetName="StrengthsOutput" Property="Background" Value="#8ceaff"/>
                             <Setter TargetName="StrengthsOutput" Property="Foreground" Value="Black"/>
                         </Trigger>
                     </DataTemplate.Triggers>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
-        <ItemsControl x:Name="lstNotNeeded" Margin="914,65,78,538" AlternationCount="2">
+        <ItemsControl x:Name="lstNightmare" Width="400" AlternationCount="2" Margin="1171,272,0,0" Height="500" HorizontalAlignment="Left" VerticalAlignment="Top">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock x:Name="NotNeededOutput" Foreground="Wheat" TextAlignment="Center" Text="{Binding}" Margin="0.5,0.5,0.5,0.5" Padding="5,2,5,2"/>
+                    <TextBlock x:Name="StrengthsOutput" Foreground="Black" TextAlignment="Left" Text="{Binding NightmareHelper}" Margin="0.5,0.5,0.5,0.5" Padding="5,2,5,2"/>
                     <DataTemplate.Triggers>
                         <Trigger Property="ItemsControl.AlternationIndex" Value="0">
-                            <Setter TargetName="NotNeededOutput" Property="Background" Value="#fcb249"/>
+                            <Setter TargetName="StrengthsOutput" Property="Background" Value="#968cff"/>
+                            <Setter TargetName="StrengthsOutput" Property="Foreground" Value="Black"/>
+                        </Trigger>
+                        <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                            <Setter TargetName="StrengthsOutput" Property="Background" Value="#8ceaff"/>
+                            <Setter TargetName="StrengthsOutput" Property="Foreground" Value="Black"/>
+                        </Trigger>
+                    </DataTemplate.Triggers>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <ItemsControl x:Name="lstNotNeeded" Margin="914,65,0,0" AlternationCount="2" Width="210" Height="180" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock x:Name="NotNeededOutput" Foreground="Black" TextAlignment="Center" Text="{Binding}" Margin="0.5,0.5,0.5,0.5" Padding="5,2,5,2"/>
+                    <DataTemplate.Triggers>
+                        <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                            <Setter TargetName="NotNeededOutput" Property="Background" Value="#968cff"/>
                             <Setter TargetName="NotNeededOutput" Property="Foreground" Value="Black"/>
                         </Trigger>
                         <Trigger Property="ItemsControl.AlternationIndex" Value="1">
-                            <Setter TargetName="NotNeededOutput" Property="Background" Value="Wheat"/>
+                            <Setter TargetName="NotNeededOutput" Property="Background" Value="#8ceaff"/>
                             <Setter TargetName="NotNeededOutput" Property="Foreground" Value="Black"/>
                         </Trigger>
                     </DataTemplate.Triggers>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
+
+
 
     </Grid>
 </Window>
