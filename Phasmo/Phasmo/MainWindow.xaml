@@ -1,0 +1,66 @@
+﻿<Window x:Class="Phasmo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Phasmo"
+        xmlns:gif ="https://github.com/XamlAnimatedGif/XamlAnimatedGif"
+        mc:Ignorable="d"
+        Title="Phasmophobia Checklist" TextBlock.TextAlignment="Center" Height="720" Width="1195" ResizeMode="NoResize">
+    <Window.Resources>
+        
+        <Style x:Key="_ListBoxItemStyle" TargetType="ListBoxItem">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBoxItem">
+                        <Border Name="_Border"
+                                Padding="2"
+                                SnapsToDevicePixels="true">
+                            <ContentPresenter />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="true">
+                                <Setter TargetName="_Border" Property="Background" Value="DarkOrange"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="_ListBoxItemStylex" TargetType="ListBoxItem">
+            <Style.Triggers>
+                <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                    <Setter Property="Background" Value="#fcb249"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                </Trigger>
+                <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                    <Setter Property="Background" Value="LightYellow"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid Background="Black">
+        <Image gif:AnimationBehavior.SourceUri="Resources/halloween.gif" HorizontalAlignment="Left" Height="272"  VerticalAlignment="Top" Width="350" RenderTransformOrigin="0.26,-1.27" Stretch="UniformToFill" Margin="470,0,0,0"/>
+        <ListBox  x:Name="FirstEvidence" Background="Transparent" Foreground="White" BorderThickness="0" ItemContainerStyle="{DynamicResource _ListBoxItemStyle}" HorizontalAlignment="Left" Height="150" VerticalAlignment="Top" Width="150" Margin="10,65,0,0" SelectionChanged="FirstEvidence_SelectionChanged" />
+        <ListBox x:Name="SecondEvidence" Background="Transparent" Foreground="White" BorderThickness="0" ItemContainerStyle="{DynamicResource _ListBoxItemStyle}" HorizontalAlignment="Left" Height="150" VerticalAlignment="Top" Width="150" Margin="165,65,0,0" SelectionChanged="SecondEvidence_SelectionChanged"/>
+        <ListBox x:Name="ThirdEvidence" Background="Transparent" Foreground="White" BorderThickness="0" ItemContainerStyle="{DynamicResource _ListBoxItemStyle}" HorizontalAlignment="Left" Height="150" VerticalAlignment="Top" Width="150" Margin="320,65,0,0" SelectionChanged="ThirdEvidence_SelectionChanged"/>
+
+        <ListBox x:Name="OutputListView" BorderThickness="0" ItemContainerStyle="{DynamicResource _ListBoxItemStylex}" AlternationCount="2"  IsEnabled="False" Focusable="False" HorizontalAlignment="Left" Height="405" VerticalAlignment="Top" Width="93" Margin="10,272,0,0" DisplayMemberPath="Name"/>
+        <ListBox x:Name="MissingListView" BorderThickness="0" ItemContainerStyle="{DynamicResource _ListBoxItemStylex}" AlternationCount="2" IsEnabled="False" HorizontalAlignment="Left" Height="405" VerticalAlignment="Top" Width="250" Margin="108,272,0,0"/>
+        <ListBox x:Name="WeaknessListView" BorderThickness="0" ItemContainerStyle="{DynamicResource _ListBoxItemStylex}" AlternationCount="2" IsEnabled="False" HorizontalAlignment="Left" Height="405" VerticalAlignment="Top" Width="400" Margin="363,272,0,0" DisplayMemberPath="Weaknesses"/>
+        <ListBox x:Name="StrengthListView" BorderThickness="0" ItemContainerStyle="{DynamicResource _ListBoxItemStylex}" AlternationCount="2" IsEnabled="False" HorizontalAlignment="Left" Height="405" VerticalAlignment="Top" Width="400" Margin="768,272,0,0" DisplayMemberPath="Strengths"/>
+
+        <Button Content="Reset" Background="Transparent" Foreground="White" Click="Button_Click" Height="100" Width="100" FontWeight="Bold" Margin="590,80,482,495" BorderThickness="3" BorderBrush="White"/>
+        <Label Content="Name" Foreground="White" Height="30" HorizontalContentAlignment="Center" FontWeight="Bold" Margin="12,237,1086,420" />
+        <Label Content="Evidence Needed" Foreground="White" Height="30" Margin="108,237,831,420" HorizontalContentAlignment="Center" FontWeight="Bold"/>
+        <Label Content="Weaknesses" Foreground="White" Height="30" Margin="363,237,426,420" HorizontalContentAlignment="Center" FontWeight="Bold"/>
+        <Label Content="Strengths" Foreground="White" Height="30"  HorizontalContentAlignment="Center" FontWeight="Bold" Margin="768,237,21,420"/>
+        <Label Content="First Evidence" Foreground="White" Height="30" Margin="12,30,1029,631" HorizontalContentAlignment="Center" FontWeight="Bold"/>
+        <Label Content="Second Evidence" Foreground="White" Height="30" Margin="165,30,874,631" HorizontalContentAlignment="Center" FontWeight="Bold"/>
+        <Label Content="Third Evidence" Foreground="White" Height="30" HorizontalContentAlignment="Center"  Margin="320,30,719,631" FontWeight="Bold"/>
+        <Label Content="Evidence Not Needed" Foreground="White" Height="30" Margin="820,30,49,631" HorizontalContentAlignment="Center" FontWeight="Bold"/>
+        <ListBox x:Name="EvidenceNotNeededListView" BorderThickness="0" Background="Black" ItemContainerStyle="{DynamicResource _ListBoxItemStylex}" AlternationCount="2" IsEnabled="False" HorizontalAlignment="Left" Height="87" VerticalAlignment="Top" Width="320" Margin="820,65,0,0"/>
+        <Label Content="© Created by Mike and Anna" Foreground="White" Height="30" HorizontalContentAlignment="Center" FontWeight="Bold" RenderTransformOrigin="1.34,-2.267" Margin="820,158,49,503"/>
+    </Grid>
+</Window>

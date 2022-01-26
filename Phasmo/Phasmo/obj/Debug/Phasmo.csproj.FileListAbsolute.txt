@@ -1,0 +1,17 @@
+C:\Users\Mikai\source\repos\Phasmo\Phasmo\obj\Debug\MainWindow.g.cs
+C:\Users\Mikai\source\repos\Phasmo\Phasmo\obj\Debug\App.g.cs
+C:\Users\Mikai\source\repos\Phasmo\Phasmo\obj\Debug\Phasmo_MarkupCompile.cache
+C:\Users\Mikai\source\repos\Phasmo\Phasmo\obj\Debug\Phasmo_MarkupCompile.lref
+C:\Users\Mikai\source\repos\Phasmo\Phasmo\bin\Debug\Phasmo.exe.config
+C:\Users\Mikai\source\repos\Phasmo\Phasmo\bin\Debug\Phasmo.exe
+C:\Users\Mikai\source\repos\Phasmo\Phasmo\bin\Debug\Phasmo.pdb
+C:\Users\Mikai\source\repos\Phasmo\Phasmo\obj\Debug\MainWindow.baml
+C:\Users\Mikai\source\repos\Phasmo\Phasmo\obj\Debug\Phasmo.g.resources
+C:\Users\Mikai\source\repos\Phasmo\Phasmo\obj\Debug\Phasmo.Properties.Resources.resources
+C:\Users\Mikai\source\repos\Phasmo\Phasmo\obj\Debug\Phasmo.csproj.GenerateResource.cache
+C:\Users\Mikai\source\repos\Phasmo\Phasmo\obj\Debug\Phasmo.exe
+C:\Users\Mikai\source\repos\Phasmo\Phasmo\obj\Debug\Phasmo.pdb
+C:\Users\Mikai\source\repos\Phasmo\Phasmo\obj\Debug\Phasmo.csprojAssemblyReference.cache
+C:\Users\Mikai\source\repos\Phasmo\Phasmo\bin\Debug\XamlAnimatedGif.dll
+C:\Users\Mikai\source\repos\Phasmo\Phasmo\bin\Debug\XamlAnimatedGif.pdb
+C:\Users\Mikai\source\repos\Phasmo\Phasmo\obj\Debug\Phasmo.csproj.CopyComplete
